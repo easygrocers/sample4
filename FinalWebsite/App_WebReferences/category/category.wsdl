@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://shopping.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://shopping.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://shopping.org/">
+      <s:element name="ListCategory">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListCategoryResult" type="tns:ArrayOfCategoryList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCategoryList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="categoryList" type="tns:categoryList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="categoryList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListSubCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="categoryId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListSubCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListSubCategoryResult" type="tns:ArrayOfSubCategoryList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSubCategoryList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="subCategoryList" type="tns:subCategoryList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="subCategoryList">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="categoryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="subCategoryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="subCategoryName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userZipcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userComment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createResult" type="tns:resultStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resultStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="errorStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="signIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="signInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="signInResult" type="tns:ArrayOfUserDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="userDetail" type="tns:userDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="userDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="zipcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="resetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="resetPasswordResult" type="tns:resultStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:ListCategory" />
+  </wsdl:message>
+  <wsdl:message name="ListCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:ListCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListSubCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:ListSubCategory" />
+  </wsdl:message>
+  <wsdl:message name="ListSubCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:ListSubCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="createSoapIn">
+    <wsdl:part name="parameters" element="tns:create" />
+  </wsdl:message>
+  <wsdl:message name="createSoapOut">
+    <wsdl:part name="parameters" element="tns:createResponse" />
+  </wsdl:message>
+  <wsdl:message name="signInSoapIn">
+    <wsdl:part name="parameters" element="tns:signIn" />
+  </wsdl:message>
+  <wsdl:message name="signInSoapOut">
+    <wsdl:part name="parameters" element="tns:signInResponse" />
+  </wsdl:message>
+  <wsdl:message name="resetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:resetPassword" />
+  </wsdl:message>
+  <wsdl:message name="resetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:resetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="categorySoap">
+    <wsdl:operation name="ListCategory">
+      <wsdl:input message="tns:ListCategorySoapIn" />
+      <wsdl:output message="tns:ListCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSubCategory">
+      <wsdl:input message="tns:ListSubCategorySoapIn" />
+      <wsdl:output message="tns:ListSubCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input message="tns:createSoapIn" />
+      <wsdl:output message="tns:createSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="signIn">
+      <wsdl:input message="tns:signInSoapIn" />
+      <wsdl:output message="tns:signInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="resetPassword">
+      <wsdl:input message="tns:resetPasswordSoapIn" />
+      <wsdl:output message="tns:resetPasswordSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="categorySoap" type="tns:categorySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListCategory">
+      <soap:operation soapAction="http://shopping.org/ListCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSubCategory">
+      <soap:operation soapAction="http://shopping.org/ListSubCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="http://shopping.org/create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="signIn">
+      <soap:operation soapAction="http://shopping.org/signIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetPassword">
+      <soap:operation soapAction="http://shopping.org/resetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="categorySoap12" type="tns:categorySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListCategory">
+      <soap12:operation soapAction="http://shopping.org/ListCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSubCategory">
+      <soap12:operation soapAction="http://shopping.org/ListSubCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap12:operation soapAction="http://shopping.org/create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="signIn">
+      <soap12:operation soapAction="http://shopping.org/signIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetPassword">
+      <soap12:operation soapAction="http://shopping.org/resetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="category">
+    <wsdl:port name="categorySoap" binding="tns:categorySoap">
+      <soap:address location="http://localhost:62662/FinalWebsite/category.asmx" />
+    </wsdl:port>
+    <wsdl:port name="categorySoap12" binding="tns:categorySoap12">
+      <soap12:address location="http://localhost:62662/FinalWebsite/category.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

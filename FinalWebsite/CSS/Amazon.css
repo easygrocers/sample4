@@ -1,0 +1,264 @@
+﻿body {
+background-color: #393F44;
+margin: 0px;
+}
+#alphaLayer {
+min-width: 1024px;
+}
+#alphaLayer, #refreshCartBody {
+background-color: #fff;
+}
+#headerNav {
+    color: #fff;
+    height: 45px;
+    min-width: 1015px;
+    margin: 0px;
+    padding: 0px;
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/taskbar-bg.png);
+    border: 0px solid #ccc;
+    border-bottom-width: 0px;
+    border-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/taskbar-undergradient.png) 0 0 2 0 stretch stretch;
+    -moz-border-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/taskbar-undergradient.png) 0 0 2 0 stretch stretch;
+    -webkit-border-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/taskbar-undergradient.png) 0 0 2 0 stretch stretch;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 100;
+}
+ul.sidelist {
+    border: 0 !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+#headerNav ul.sidelist li {
+    display: inline-block !important;
+    line-height: 44px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: middle !important;
+}
+#accountMenu {
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/taskbar-bg.png);
+    -webkit-box-shadow: 3px 3px 5px #CCC;
+    -moz-box-shadow: 3px 3px 5px #CCC;
+    box-shadow: 3px 3px 5px #CCC;
+    clip: rect(0px, 5000px, 5000px, -10px);
+    display: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 45px;
+    left: 147px;
+    z-index: 100;
+}
+.menu {
+    -webkit-box-shadow: 0px 15px 45px 25px rgba(70, 70, 70, .9);
+    -moz-box-shadow: 0px 15px 45px 25px rgba(70, 70, 70, .9);
+    box-shadow: 0px 15px 45px 25px rgba(70, 70, 70, .9);
+    background: #f5f5f5;
+    position: fixed;
+    top: 45px;
+    left: 0px;
+    right: 0px;
+    z-index: 100;
+    clip: rect(0px, 5000px, 5000px, -10px);
+    padding: 15px;
+    display: none;
+    outline: none;
+}
+#lightboxblockout.centered, #orderProcessing {
+    position: fixed;
+}
+#lightboxblockout, #orderProcessing {
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/recipes/blK_overlay._V386893316_.png);
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+#orderProcessing {
+    background-image: none;
+    background-color: rgba(255, 255, 255, .8);
+    /*-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
+    zoom: 1;
+}
+#pageWrapper {
+    display: inline-block;
+    margin-top: 46px;
+    margin-bottom: 30px;
+    width: 100%;
+    min-width: 1024px;
+}
+#shoppingCart {
+float: right;
+margin-left: 10px;
+}
+#pageWrapper.hasCart #shopBar {
+margin-right: 430px;
+}
+#shopBar {
+color: #464646;
+margin: 10px;
+margin-right: 147px;
+position: relative;
+}
+#flyout, #flyout .category > a {
+color: #363636;
+font-size: 13px;
+text-decoration: none;
+}
+    #flyout, #flyout .catDetails {
+        height: 435px;
+    }
+#flyout {
+    background-color: #fff;
+    -webkit-box-shadow: 4px 4px 4px rgba(155, 155, 155, 0.6);
+    -moz-box-shadow: 4px 4px 4px rgba(155, 155, 155, 0.6);
+    box-shadow: 4px 4px 4px rgba(155, 155, 155, 0.6);
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    display: none;
+    position: absolute;
+    top: 34px;
+    left: 2px;
+    width: 210px;
+    z-index: 40;
+}
+    #flyout #flyoutwrapper {
+        margin-top: 17px;
+    }
+    #flyout .category {
+        cursor: pointer;
+        padding: 8px 0px;
+        margin-right: 15px;
+        margin-left: 23px;
+    }
+        #flyout .category > a {
+            display: block;
+        }
+        #flyout, #flyout .category > a {
+            color: #363636;
+            font-size: 13px;
+            text-decoration: none;
+        }
+            #flyout .catHeader {
+                background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/flyout-menu-grayarrow.png);
+                background-position: top right;
+                background-repeat: no-repeat;
+            }
+            #flyout .catTitle {
+                padding-right: 20px;
+            }
+            #flyout .tagline {
+                color: #aaa;
+                font-size: 10.5px;
+                margin-top: 2px;
+            }
+            #flyout .catDetails {
+                background-color: #fff;
+                background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/flyout-menu-separator.png);
+                background-repeat: no-repeat;
+                background-position: left bottom;
+                -webkit-box-shadow: 6px 3px 6px rgba(130, 130, 130, .6);
+                -moz-box-shadow: 6px 3px 6px rgba(130, 130, 130, .6);
+                box-shadow: 6px 3px 6px rgba(130, 130, 130, .6);
+                border-bottom-right-radius: 5px;
+                -moz-border-radius-bottomright: 5px;
+                cursor: auto;
+                display: none;
+                position: absolute;
+                left: 210px;
+                top: 0px;
+                width: 520px;
+                z-index: 30;
+            }
+                #flyout .catDetails .catTitle {
+                    color: #690;
+                    font-size: 15px;
+                    margin: 20px;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                    padding-top: 25px;
+                }
+            #flyout .catContents {
+                font-size: 12px;
+                margin: 20px;
+                margin-top: 0px;
+            }
+#accountMenu ul .taskbar_menubutton {
+    margin: 5px 0px;
+}
+#accountMenu li {
+    color: #464646;
+    font-size: 13px;
+    padding: 0.5em;
+}
+#accountMenu a {
+    color: #FFFFFF;
+    outline: none;
+    text-decoration: none;
+}
+.message {
+margin-bottom: 1em;
+}
+.messagebody {
+    margin-bottom: 0px;
+}
+.messagepopupoptions {
+text-align: right;
+}
+a:visited {
+color: #669900;
+}
+#orderCheckoutSpinner {
+position: relative;
+z-index: 9999;
+text-align: center;
+}
+#lightboxblockout.centered #lightbox, #orderCheckoutSpinner {
+margin: 0px auto;
+top: 200px;
+left: 0px;
+}
+@media only screen and (min-width: 1280px) {
+    #headerNav .innerpadding {
+        padding: 0px 10px;
+    }
+    #headerNav #freshLogo {
+        padding-right: 25px;
+    }
+}
+#refreshFooter {
+    background-color: #393F44;
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+    min-height: 100px;
+}
+#refreshFooter .column {
+float: left;
+margin-bottom: 15px;
+}
+.column {
+vertical-align: top;
+}
+#refreshFooter .column a {
+    color: #fff;
+    display: block;
+    margin-right: 50px;
+    font-size: 14px;
+    text-decoration: none;
+}
+#refreshFooter #copyrightAndDisclaimer {
+font-size: 12px;
+clear: both;
+}
